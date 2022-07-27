@@ -10,7 +10,7 @@ generate one dimensional elementary cellular automata
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
 
-configuration = OneDimensionalElementaryCellularAutomata()
+configuration = OneDimensionalElementaryCellularAutomata(initial_configuration="0000100001011")
 
 for _ in range(100):
     configuration.transition(rule_number=110)
