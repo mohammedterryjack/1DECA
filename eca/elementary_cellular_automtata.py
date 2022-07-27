@@ -33,7 +33,7 @@ class OneDimensionalElementaryCellularAutomata:
 
         self.__width:int = lattice_width
         self.__evolution:List[int] = [initial_configuration]
-        self.__configuration_cache:Dict[int,int] = dict()
+        self.__configuration_cache:Dict[int,Dict[int,int]] = dict()
         self.__local_rule_cache:Dict[int,Dict[str,str]] = dict()
 
     def __int__(self) -> int:
@@ -45,6 +45,9 @@ class OneDimensionalElementaryCellularAutomata:
     def numpy(self) -> ndarray:
         return array(list(map(int,str(self))))
 
+    def graph(self, rule_number:int) -> Dict[int,int]:
+        return self.__configuration_cache.get(rule_number,dict())
+
     def evolution(self) -> ndarray:
         return array(list(map(
             lambda index:list(map(
@@ -55,12 +58,13 @@ class OneDimensionalElementaryCellularAutomata:
         )))
 
     def transition(self, rule_number:int) -> None:
-        cache_key = f"rule_{rule_number}_configuration_{int(self)}"
-        if cache_key not in self.__configuration_cache:
+        if rule_number not in self.__configuration_cache:
+            self.__configuration_cache[rule_number] = dict()
+        if int(self) not in self.__configuration_cache[rule_number]:
             transition_rule = self._get_rule(index=rule_number)
             new_configuration_index = transition_rule(configuration_index=int(self))
-            self.__configuration_cache[cache_key] = new_configuration_index
-        self.__evolution.append(self.__configuration_cache[cache_key])
+            self.__configuration_cache[rule_number][int(self)] = new_configuration_index
+        self.__evolution.append(self.__configuration_cache[rule_number][int(self)])
 
     def _get_rule(self, index:int) -> callable:
         if index not in self.__local_rule_cache:
