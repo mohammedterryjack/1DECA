@@ -41,4 +41,5 @@ for ic in range(max_ic):
 draw_spectral(graph)
 ```
 
+## More examples:
 see `example.ipynb`
