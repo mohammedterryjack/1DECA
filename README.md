@@ -29,9 +29,9 @@ imshow(configuration.evolution())
 ```python
 from networkx import Graph, draw_spectral
 
-rule = 110
-depth = 300
-max_ic = 300
+rule = 12
+depth = 100
+max_ic = 30
 graph = Graph()
 for ic in range(max_ic):
     ca = OneDimensionalElementaryCellularAutomata(initial_configuration=ic)
