@@ -5,19 +5,16 @@ generate one dimensional elementary cellular automata
 ## Install
 `pip install eca`
 
-## Example
+## Example 1: Basics
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
 
 configuration = OneDimensionalElementaryCellularAutomata(initial_configuration="0000100001011")
-
-for _ in range(100):
-    configuration.transition(rule_number=110)
-
-print(str(configuration))
+configuration.transition(rule_number=110)
+str(configuration)
 ```
-> 1111101110010
+> 0001100011111
 
 
 ## Example 2: Displaying CA evolution
