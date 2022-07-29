@@ -27,18 +27,28 @@ imshow(configuration.evolution())
 ## Advanced example: Viewing Attractor Basins
 
 ```python
-from networkx import Graph, draw_spectral
+from eca import OneDimensionalElementaryCellularAutomata
+from networkx import Graph, draw
 
-rule = 12
-depth = 100
-max_ic = 30
-graph = Graph()
-for ic in range(max_ic):
-    ca = OneDimensionalElementaryCellularAutomata(initial_configuration=ic)
-    for _ in range(depth):
-        ca.transition(rule)
-    graph.add_edges_from(ca.graph(rule).items())
-draw_spectral(graph)
+RULE = 3
+WIDTH = 10
+DEPTH = 100
+MAX_IC = 30
+
+GRAPH = Graph()
+
+
+for IC in range(MAX_IC):
+    cellular_automata = OneDimensionalElementaryCellularAutomata(
+        initial_configuration=IC,
+        lattice_width=WIDTH
+    )
+    for _ in range(DEPTH):
+        cellular_automata.transition(RULE)
+    
+    GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
+    
+draw(graph)
 ```
 
 ## More examples:
