@@ -28,7 +28,7 @@ configuration = OneDimensionalElementaryCellularAutomata(lattice_width=1000)
 for _ in range(400):
     configuration.transition(rule_number=110)
 
-imshow(configuration.evolution())
+imshow(configuration.evolution(),cmap='gray')
 ```
 ![](images/rule110.png)
 
