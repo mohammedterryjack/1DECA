@@ -23,9 +23,9 @@ str(configuration)
 from eca import OneDimensionalElementaryCellularAutomata
 from matplotlib.pyplot import imshow
 
-configuration = OneDimensionalElementaryCellularAutomata(lattice_width=500)
+configuration = OneDimensionalElementaryCellularAutomata(lattice_width=1000)
 
-for _ in range(1000):
+for _ in range(400):
     configuration.transition(rule_number=110)
 
 imshow(configuration.evolution())
