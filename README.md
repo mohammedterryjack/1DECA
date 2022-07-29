@@ -39,7 +39,7 @@ from eca import OneDimensionalElementaryCellularAutomata
 from networkx import Graph, draw
 
 RULE = 3
-WIDTH = 10
+WIDTH = 5
 DEPTH = 100
 MAX_IC = 30
 
@@ -56,7 +56,7 @@ for IC in range(MAX_IC):
     
     GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
     
-draw(GRAPH)
+draw(GRAPH, with_labels=True)
 ```
 ![](images/rule3.png)
 
