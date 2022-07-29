@@ -58,7 +58,7 @@ for IC in range(MAX_IC):
     
 draw(GRAPH, with_labels=True)
 ```
-![](images/rule3.png)
+![](images/rule3attractors.png)
 
 ## More examples:
 see `example.ipynb`
