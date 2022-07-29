@@ -17,12 +17,14 @@ for _ in range(100):
 
 print(str(configuration))
 ```
+>> 1111101110010
 
 ```python
 from matplotlib.pyplot import imshow
 
 imshow(configuration.evolution())
 ```
+![](images/rule110.png)
 
 ## Advanced example: Viewing Attractor Basins
 
