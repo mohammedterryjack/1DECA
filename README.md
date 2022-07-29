@@ -48,7 +48,7 @@ for IC in range(MAX_IC):
     
     GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
     
-draw(graph)
+draw(GRAPH)
 ```
 
 ## More examples:
