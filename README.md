@@ -50,6 +50,7 @@ for IC in range(MAX_IC):
     
 draw(GRAPH)
 ```
+![](images/rule3.png)
 
 ## More examples:
 see `example.ipynb`
