@@ -17,16 +17,25 @@ for _ in range(100):
 
 print(str(configuration))
 ```
->> 1111101110010
+> 1111101110010
+
+
+## Example 2: Displaying CA evolution
 
 ```python
+from eca import OneDimensionalElementaryCellularAutomata
 from matplotlib.pyplot import imshow
+
+configuration = OneDimensionalElementaryCellularAutomata(lattice_width=500)
+
+for _ in range(1000):
+    configuration.transition(rule_number=110)
 
 imshow(configuration.evolution())
 ```
 ![](images/rule110.png)
 
-## Advanced example: Viewing Attractor Basins
+## Example 3: Viewing Attractor Basins
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
