@@ -84,7 +84,7 @@ for IC in range(MAX_IC):
     
     GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
 
-for nodes in connected_components(GRAPH):
+for nodes in strongly_connected_components(GRAPH):
     draw_spring(GRAPH.subgraph(nodes), with_labels=True)
     
 ```
