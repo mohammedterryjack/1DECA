@@ -70,7 +70,7 @@ for nodes in weakly_connected_components(GRAPH):
     draw(GRAPH.subgraph(nodes), with_labels=True)
 
     cellular_automata = OneDimensionalElementaryCellularAutomata(
-       initial_configuration=choice(GRAPH.subgraph(nodes).nodes()),
+       initial_configuration=choice(list(nodes)),
        lattice_width=WIDTH
     )
     for _ in range(DEPTH):
