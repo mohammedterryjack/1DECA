@@ -100,9 +100,9 @@ for nodes in weakly_connected_components(GRAPH):
     show()
 ```
 
-![](images/rule3ab1.png)
-![](images/rule3ab2.png)
-![](images/rule3ab3.png)
+![](images/rule3attractorbasin1.png)
+![](images/rule3attractorbasin2.png)
+![](images/rule3attractorbasin3.png)
 
 ## More examples:
 see `example.ipynb`
