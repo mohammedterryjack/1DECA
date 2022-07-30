@@ -66,8 +66,8 @@ draw(GRAPH, with_labels=True)
 from eca import OneDimensionalElementaryCellularAutomata
 from networkx import DiGraph, Graph, connected_components, draw_spring
 
-RULE = 3
-WIDTH = 5
+RULE = 110
+WIDTH = 10
 DEPTH = 100
 MAX_IC = 30
 
@@ -90,6 +90,7 @@ for nodes in connected_components(GRAPH):
     draw_spring(graph, with_labels=True)
     
 ```
+![](images/rule110attractorbasins.png)
 
 ## More examples:
 see `example.ipynb`
