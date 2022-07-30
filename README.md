@@ -84,9 +84,9 @@ for IC in range(MAX_IC):
     
     GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
 
-for subgraph in connected_components(GRAPH):
+for nodes in connected_components(GRAPH):
     graph = DiGraph()
-    graph.add_edges_from(GRAPH.subgraph(components).edges())
+    graph.add_edges_from(GRAPH.subgraph(nodes).edges())
     draw(graph, with_labels=True)
     
 ```
