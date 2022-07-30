@@ -64,7 +64,7 @@ draw(GRAPH, with_labels=True)
 ```python
 
 from eca import OneDimensionalElementaryCellularAutomata
-from networkx import DiGraph, Graph, connected_components, draw
+from networkx import DiGraph, Graph, connected_components, draw_spring
 
 RULE = 3
 WIDTH = 5
@@ -87,7 +87,7 @@ for IC in range(MAX_IC):
 for nodes in connected_components(GRAPH):
     graph = DiGraph()
     graph.add_edges_from(GRAPH.subgraph(nodes).edges())
-    draw(graph, with_labels=True)
+    draw_spring(graph, with_labels=True)
     
 ```
 
