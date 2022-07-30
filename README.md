@@ -88,7 +88,9 @@ for nodes in weakly_connected_components(GRAPH):
     draw(GRAPH.subgraph(nodes), with_labels=True)
     
 ```
-![](images/rule110attractorbasins.png)
+![](images/rule3ab1.png)
+![](images/rule3ab2.png)
+![](images/rule3ab3.png)
 
 ## More examples:
 see `example.ipynb`
