@@ -60,5 +60,36 @@ draw(GRAPH, with_labels=True)
 ```
 ![](images/rule3attractorbasin.png)
 
+## Example 4: Viewing Each Attractor basin separately
+```python
+
+from eca import OneDimensionalElementaryCellularAutomata
+from networkx import DiGraph, Graph, connected_components, draw
+
+RULE = 3
+WIDTH = 5
+DEPTH = 100
+MAX_IC = 30
+
+GRAPH = Graph()
+
+
+for IC in range(MAX_IC):
+    cellular_automata = OneDimensionalElementaryCellularAutomata(
+        initial_configuration=IC,
+        lattice_width=WIDTH
+    )
+    for _ in range(DEPTH):
+        cellular_automata.transition(RULE)
+    
+    GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
+
+for subgraph in connected_components(GRAPH):
+    graph = DiGraph()
+    graph.add_edges_from(GRAPH.subgraph(components).edges())
+    draw(graph, with_labels=True)
+    
+```
+
 ## More examples:
 see `example.ipynb`
