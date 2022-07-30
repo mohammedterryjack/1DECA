@@ -96,7 +96,7 @@ for nodes in weakly_connected_components(GRAPH):
     )
     for _ in range(DEPTH):
         cellular_automata.transition(RULE)
-    imshow(cellular_automata.evolution())
+    imshow(cellular_automata.evolution(),cmap='gray')
     show()
 ```
 
