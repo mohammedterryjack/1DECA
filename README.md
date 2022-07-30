@@ -65,8 +65,6 @@ draw(GRAPH, with_labels=True)
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
 from networkx import DiGraph, draw, weakly_connected_components
-from random import choice
-from matplotlib.pyplot import show
 
 RULE = 3
 WIDTH = 5
@@ -89,15 +87,6 @@ for IC in range(MAX_IC):
 
 for nodes in weakly_connected_components(GRAPH):
     draw(GRAPH.subgraph(nodes), with_labels=True)
-    show()
-    cellular_automata = OneDimensionalElementaryCellularAutomata(
-        initial_configuration=choice(list(nodes)),
-        lattice_width=WIDTH
-     )
-     for _ in range(DEPTH):
-        cellular_automata.transition(RULE)
-     imshow(cellular_automata.evolution())
-     show()
 ```
 
 ![](images/rule3ab1.png)
