@@ -64,7 +64,7 @@ draw(GRAPH, with_labels=True)
 ```python
 
 from eca import OneDimensionalElementaryCellularAutomata
-from networkx import DiGraph, strongly_connected_components, draw_spring
+from networkx import DiGraph, weakly_connected_components, draw
 
 RULE = 3
 WIDTH = 5
@@ -84,8 +84,8 @@ for IC in range(MAX_IC):
     
     GRAPH.add_edges_from(cellular_automata.graph(RULE).items())
 
-for nodes in strongly_connected_components(GRAPH):
-    draw_spring(GRAPH.subgraph(nodes), with_labels=True)
+for nodes in weakly_connected_components(GRAPH):
+    draw(GRAPH.subgraph(nodes), with_labels=True)
     
 ```
 ![](images/rule110attractorbasins.png)
