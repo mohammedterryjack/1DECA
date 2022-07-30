@@ -60,13 +60,23 @@ draw(GRAPH, with_labels=True)
 ```
 ![](images/rule3attractorbasin.png)
 
-## Example 3b: Viewing Each Attractor basin separately
+## Example 3b: Inspecting Each Attractor basin more closely
 
 ```python
 from networkx import weakly_connected_components
+from random import choice
 
 for nodes in weakly_connected_components(GRAPH):
     draw(GRAPH.subgraph(nodes), with_labels=True)
+
+    cellular_automata = OneDimensionalElementaryCellularAutomata(
+       initial_configuration=choice(GRAPH.subgraph(nodes).nodes()),
+       lattice_width=WIDTH
+    )
+    for _ in range(DEPTH):
+       cellular_automata.transition(RULE)
+    imshow(cellular_automata.evolution())
+
 ```
 ![](images/rule3ab1.png)
 ![](images/rule3ab2.png)
