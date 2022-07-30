@@ -66,8 +66,8 @@ draw(GRAPH, with_labels=True)
 from eca import OneDimensionalElementaryCellularAutomata
 from networkx import DiGraph, strongly_connected_components, draw_spring
 
-RULE = 110
-WIDTH = 10
+RULE = 3
+WIDTH = 5
 DEPTH = 100
 MAX_IC = 30
 
