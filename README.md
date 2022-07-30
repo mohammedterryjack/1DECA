@@ -36,14 +36,14 @@ imshow(configuration.evolution(),cmap='gray')
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
-from networkx import Graph, draw
+from networkx import DiGraph, draw
 
 RULE = 3
 WIDTH = 5
 DEPTH = 100
 MAX_IC = 30
 
-GRAPH = Graph()
+GRAPH = DiGraph()
 
 
 for IC in range(MAX_IC):
