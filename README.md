@@ -68,14 +68,15 @@ from random import choice
 
 for nodes in weakly_connected_components(GRAPH):
     draw(GRAPH.subgraph(nodes), with_labels=True)
-
+    
     cellular_automata = OneDimensionalElementaryCellularAutomata(
-       initial_configuration=choice(list(nodes)),
-       lattice_width=WIDTH
-    )
-    for _ in range(DEPTH):
-       cellular_automata.transition(RULE)
-    imshow(cellular_automata.evolution())
+        initial_configuration=choice(list(nodes)),
+        lattice_width=WIDTH
+     )
+     for _ in range(DEPTH):
+        cellular_automata.transition(RULE)
+     
+     imshow(cellular_automata.evolution())
 
 ```
 ![](images/rule3ab1.png)
