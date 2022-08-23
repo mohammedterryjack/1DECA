@@ -5,7 +5,7 @@ generate one dimensional elementary cellular automata
 ## Install
 `pip install eca`
 
-## Example 1: Basics
+## Example 1: 
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
@@ -17,7 +17,7 @@ str(configuration)
 > 0001100011111
 
 
-## Example 2: Displaying CA evolution
+## Example 2:
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
@@ -32,7 +32,7 @@ imshow(configuration.evolution(),cmap='gray')
 ```
 ![](images/rule110.png)
 
-## Example 3: Viewing Attractor Basins
+## Example 3: 
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
@@ -60,7 +60,7 @@ draw(GRAPH, with_labels=True)
 ```
 ![](images/rule3attractorbasin.png)
 
-## Example 4: Inspecting Each Attractor basin more closely
+## Example 4:
 
 ```python
 from eca import OneDimensionalElementaryCellularAutomata
@@ -104,11 +104,31 @@ for nodes in weakly_connected_components(GRAPH):
 ![](images/rule3attractorbasin2.png)
 ![](images/rule3attractorbasin3.png)
 
-## Example 5: Plotting Trajectories (e.g. to view Sensitivity to Initial Conditions)
+## Example 5: 
 ```python
+from matplotlib.pyplot import plot, legend, title, show
+
+RULE = 110
+WIDTH = 20
+DEPTH = 100
+
+for IC in range(10,13):
+    configuration = OneDimensionalElementaryCellularAutomata(
+        lattice_width=WIDTH, 
+        initial_configuration=IC
+    )
+    for _ in range(DEPTH):
+        configuration.transition(rule_number=RULE)
+    
+    x,y = zip(*configuration.trajectory())
+    plot(x,y,'-->',label=f'initial_condition={IC}')
+
+title(f"Rule {RULE}")
+legend()
+show()
 
 ```
-![](images/rule110_sensitivity_to_ic.png
+![](images/rule110_sensitivity_to_ic.png)
 
 ## More examples:
 see `example.ipynb`
