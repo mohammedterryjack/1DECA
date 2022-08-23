@@ -128,7 +128,7 @@ legend()
 show()
 
 ```
-![](images/rule110_sensitivity_to_ic.png)
+![](images/rule110_sensitiveIC.png)
 
 ## More examples:
 see `example.ipynb`
