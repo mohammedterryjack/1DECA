@@ -1,4 +1,4 @@
-from typing import Optional, Union, List, Dict, Generator
+from typing import Optional, Union, List, Dict, Generator, Tuple
 from random import randint 
 
 from numpy import ndarray, array
@@ -47,6 +47,9 @@ class OneDimensionalElementaryCellularAutomata:
 
     def graph(self, rule_number:int) -> Dict[int,int]:
         return self.__configuration_cache.get(rule_number,dict())
+
+    def trajectory(self) -> List[Tuple[int,int]]:
+        return list(zip(self.__evolution[1:],self.__evolution[:-1]))
 
     def evolution(self) -> ndarray:
         return array(list(map(
