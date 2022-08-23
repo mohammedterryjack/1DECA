@@ -129,6 +129,7 @@ show()
 
 ```
 ![](images/rule110_sensitiveIC.png)
+![](images/rule110ics.png)
 
 ## More examples:
 see `example.ipynb`
