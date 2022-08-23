@@ -49,7 +49,14 @@ class OneDimensionalElementaryCellularAutomata:
         return self.__configuration_cache.get(rule_number,dict())
 
     def trajectory(self) -> List[Tuple[int,int]]:
-        return list(zip(self.__evolution[1:],self.__evolution[:-1]))
+        gray_encoded_coordinates = list(map(
+            self._get_greycode,
+            self.__evolution 
+        ))
+        return list(zip(
+            gray_encoded_coordinates[1:],
+            gray_encoded_coordinates[:-1]
+        ))
 
     def evolution(self) -> ndarray:
         return array(list(map(
@@ -86,6 +93,10 @@ class OneDimensionalElementaryCellularAutomata:
             )
             return int(new_configuration,base=2)
         return global_rule
+
+    @staticmethod
+    def _get_greycode(index:int) -> int:
+        return index^(index>>1)
 
     @staticmethod
     def _get_binary_string(index:int, width:int) -> str:
