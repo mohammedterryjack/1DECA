@@ -104,5 +104,11 @@ for nodes in weakly_connected_components(GRAPH):
 ![](images/rule3attractorbasin2.png)
 ![](images/rule3attractorbasin3.png)
 
+## Example 5: Plotting Trajectories (e.g. to view Sensitivity to Initial Conditions)
+```python
+
+```
+![](images/rule110_sensitivity_to_ic.png
+
 ## More examples:
 see `example.ipynb`
