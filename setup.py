@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.9"
+VERSION = "0.0.10"
 DESCRIPTION = LONG_DESCRIPTION = "One Dimensional Elementary Cellular Automata"
 
 setup(
