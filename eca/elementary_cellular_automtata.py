@@ -3,6 +3,8 @@ from random import randint
 
 from numpy import ndarray, array
 
+from eca.boolean_cube import BooleanCube
+
 class OneDimensionalElementaryCellularAutomata:
     def __init__(self, lattice_width:int=100, initial_configuration:Optional[Union[int,str,List[int],ndarray]]=None) -> None:
         minimum_configuration_index, maximum_configuration_index = 0, 1+int(lattice_width*"1",base=2)
@@ -93,6 +95,14 @@ class OneDimensionalElementaryCellularAutomata:
             )
             return int(new_configuration,base=2)
         return global_rule
+
+    @staticmethod
+    def about_rule(rule_index:int) -> Dict[str,Union[int,dict]]:
+        return dict(
+            rule_index=rule_index,
+            lookup_table=OneDimensionalElementaryCellularAutomata._get_transition_table(index=rule_index),
+            boolean_cube=BooleanCube.information(rule_index=rule_index)
+        )
 
     @staticmethod
     def _get_greycode(index:int) -> int:
