@@ -69,6 +69,11 @@ class OneDimensionalElementaryCellularAutomata:
             self.__evolution
         )))
 
+    def transition_randomly(self) -> None:
+        maximum_configuration_id = int(2**self.__width)
+        next_configuration_id = randint(0,maximum_configuration_id)
+        self.__evolution.append(next_configuration_id)
+
     def transition(self, rule_number:int) -> None:
         if rule_number not in self.__configuration_cache:
             self.__configuration_cache[rule_number] = dict()
