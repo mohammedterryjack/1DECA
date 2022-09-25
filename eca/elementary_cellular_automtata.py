@@ -70,7 +70,7 @@ class OneDimensionalElementaryCellularAutomata:
         )))
 
     def transition_randomly(self) -> None:
-        maximum_configuration_id = int(2**self.__width)
+        maximum_configuration_id = int(2**self.__width)-1
         next_configuration_id = randint(0,maximum_configuration_id)
         self.__evolution.append(next_configuration_id)
 
